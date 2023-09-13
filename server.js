@@ -32,6 +32,7 @@ app.use("/api/v1/admin", require("./routes/adminRoutes"));
 app.use(express.static(path.join(__dirname, "./client/build")));
 
 app.get("*", function (req, res) {
+  console.log("Get request build");
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
 //port
