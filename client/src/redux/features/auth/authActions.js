@@ -16,9 +16,9 @@ export const userLogin = createAsyncThunk(
       return data;
     } catch (error) {
       if (error.response && error.response.data.message) {
-        return rejectWithValue(error.response.data.message);
+        return rejectWithValue("NOTE: Vercel Server is down sometimes, please try live demo"+ error.response.data.message);
       } else {
-        return rejectWithValue(error.message);
+        return rejectWithValue("NOTE: Vercel Server is down sometimes, please try live demo"+ error.message);
       }
     }
   }
