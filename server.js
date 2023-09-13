@@ -31,7 +31,7 @@ app.use("/api/v1/admin", require("./routes/adminRoutes"));
 //static files
 app.use(express.static(path.join(__dirname, "/client/build")));
 
-app.get("/", function (req, res) {
+app.get("*", function (req, res) {
   console.log("Get request build");
   res.sendFile(path.join(__dirname, "/client/build/index.html"));
 });
